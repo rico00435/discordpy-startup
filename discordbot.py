@@ -1,6 +1,4 @@
-from discord.ext import commands , tasks
-import os
-import traceback
+from discord.ext import tasks
 import discord
 
 token = os.environ['DISCORD_BOT_TOKEN']
