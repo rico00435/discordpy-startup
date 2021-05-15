@@ -3,7 +3,7 @@ import discord
 
 client = discord.Client()
 
-channel_sent = 797040818794921984
+channel_sent = None
 
 @tasks.loop(minutes=1)
 async def send_message_every_120min():
