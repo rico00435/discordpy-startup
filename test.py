@@ -20,7 +20,7 @@ botの準備ができた段階で定期実行をstart()します
 @client.event
 async def on_ready():
     global channel_sent 
-    channel_sent = client.get_channel(any_channel_id)
+    channel_sent = client.get_channel(797040818794921984)
     send_message_every_10sec.start() #定期実行するメソッドの後ろに.start()をつける
 
 
