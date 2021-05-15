@@ -1,21 +1,20 @@
-from discord.ext import commands
-import os
-import traceback
+from discord.ext import tasks
+import discord
 
-bot = commands.Bot(command_prefix='/')
-token = os.environ['DISCORD_BOT_TOKEN']
+client = discord.Client()
 
+channel_sent = 817359255703257098
 
-@bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
+@tasks.loop(minutes=120)
+async def send_message_every_120min():
+    await channel_sent.send("!d bump")
 
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
+@client.event
+async def on_ready():
+    global channel_sent 
+    channel_sent = client.get_channel(any_channel_id)
+    send_message_every_120min.start()
 
 
-bot.run(token)
+client.run("ODQyOTI4NTQ2MjA5MjAyMjA3.YJ8cYg.jjPXqtX5_KRkWFJEvPoxGfHDL_Q")
