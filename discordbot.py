@@ -3,8 +3,6 @@ import discord
 
 client = discord.Client()
 
-BOT_TOKEN = "hogehoge"
-CHANNEL_ID = 797040818794921984
 channel_sent = None
 
 @tasks.loop(seconds=10)
@@ -17,4 +15,4 @@ async def on_ready():
     channel_sent = client.get_channel(797040818794921984)
     send_message_every_120min.start()
     
-    client.run(BOT_TOKEN)
+client.run("hogehogetoken")
