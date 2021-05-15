@@ -29,7 +29,7 @@ async def send_message_every_10sec():
 @client.event
 async def on_ready():
     global channel_sent 
-    channel_sent = client.get_channel(797040818794921984)
+    channel_sent = client.get_channel(any_channel_id)
     send_message_every_10sec.start()
     
 client.run("hogehogetoken")
