@@ -3,9 +3,9 @@ import discord
 
 client = discord.Client()
 
-channel_sent = 817359255703257098
+channel_sent = 797040818794921984
 
-@tasks.loop(minutes=120)
+@tasks.loop(minutes=1)
 async def send_message_every_120min():
     await channel_sent.send("!d bump")
 
