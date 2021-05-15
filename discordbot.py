@@ -17,4 +17,4 @@ async def on_ready():
     send_message_every_120min.start()
 
 
-client.run("ODQyOTI4NTQ2MjA5MjAyMjA3.YJ8cYg.jjPXqtX5_KRkWFJEvPoxGfHDL_Q")
+client.run("hogehogetoken")
